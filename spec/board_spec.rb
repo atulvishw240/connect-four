@@ -12,7 +12,6 @@ describe Board do
       @board.display_row(@board.board[0])
       $stdout.rewind
 
-      # expect($stdout.gets).to eq("-----------------------------\n")
       expect($stdout.gets).to eq("| \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} |\n")
       expect($stdout.gets).to eq("-----------------------------\n")
     end
