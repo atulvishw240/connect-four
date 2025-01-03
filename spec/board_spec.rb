@@ -9,7 +9,7 @@ describe Board do
   describe "#display_row" do
     it "takes a row from our board array as input and displays it" do
       $stdout = StringIO.new
-      @board.display
+      @board.display_row(@board.board[0])
       $stdout.rewind
 
       # expect($stdout.gets).to eq("-----------------------------\n")
