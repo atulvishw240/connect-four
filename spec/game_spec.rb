@@ -17,4 +17,12 @@ describe do
       expect(@game.current_player).to eq(@player1)
     end
   end
+
+  describe "#switch_player" do
+    it "returns @player2 as current player" do
+      @game.switch_player
+
+      expect(@game.current_player).to eq(@player2)
+    end
+  end
 end

@@ -11,4 +11,8 @@ class Game
   def current_player
     @players[current_player_id]
   end
+
+  def switch_player
+    @current_player_id = 1 - @current_player_id
+  end
 end
