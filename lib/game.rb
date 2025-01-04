@@ -16,7 +16,15 @@ class Game
     @current_player_id = 1 - @current_player_id
   end
 
-  def row_won?(row_index)
-    true
+  def row_won?(row_index, player)
+    counter = 0
+    board.board[row_index].each do |marker|
+      counter += 1 if marker == player.marker
+      counter = 0 unless marker == player.marker
+
+      return true if counter == 4
+    end
+
+    false
   end
 end

@@ -33,7 +33,7 @@ describe do
       @board.board[0][2] = @player1.marker
       @board.board[0][3] = @player1.marker
 
-      expect(@game.row_won?(0)).to eq(true)
+      expect(@game.row_won?(0, @player1)).to eq(true)
     end
 
     it "takes row_index as input & returns false if there aren't 4 consecutive same marker in a row" do
@@ -42,7 +42,7 @@ describe do
       @board.board[0][4] = @player1.marker
       @board.board[0][5] = @player1.marker
 
-      expect(@game.won?(0)).to eq(false)
+      expect(@game.row_won?(0, @player1)).to eq(false)
     end
   end
 end
