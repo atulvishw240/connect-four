@@ -97,4 +97,12 @@ class Game
 
     bool1 || bool2 || bool3 || bool4
   end
+
+  def winning_message(player)
+    "#{player.name} won the Game!!"
+  end
+
+  def draw_message
+    "The game ended in draw!!"
+  end
 end
