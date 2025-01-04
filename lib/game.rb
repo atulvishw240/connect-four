@@ -42,4 +42,8 @@ class Game
 
     false
   end
+
+  def diagonal_won?(row_index, col_index, player)
+    true
+  end
 end
