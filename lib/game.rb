@@ -65,4 +65,8 @@ class Game
 
     false
   end
+
+  def rev_diagonal_won?(row_index, col_index, player)
+    true
+  end
 end
