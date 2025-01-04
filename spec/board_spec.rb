@@ -13,7 +13,7 @@ describe Board do
       $stdout.rewind
 
       expect($stdout.gets).to eq("| \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} | \u{26AB} |\n")
-      expect($stdout.gets).to eq("-----------------------------\n")
+      expect($stdout.gets).to eq("------------------------------------\n")
     end
   end
 end
