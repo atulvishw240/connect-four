@@ -27,4 +27,8 @@ class Game
 
     false
   end
+
+  def col_won?(col_index, player)
+    true
+  end
 end

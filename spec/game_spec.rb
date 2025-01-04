@@ -54,4 +54,15 @@ describe do
       expect(@game.row_won?(0, @player1)).to eq(true)
     end
   end
+
+  describe "#col_won?" do
+    it "returns true if there are 4 consecutive marker in a column" do
+      @board.board[1][0] = @player1.marker
+      @board.board[2][0] = @player1.marker
+      @board.board[3][0] = @player1.marker
+      @board.board[4][0] = @player1.marker
+
+      expect(@game.col_won?(0, @player1)).to eq(true)
+    end
+  end
 end
