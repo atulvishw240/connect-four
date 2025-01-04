@@ -29,6 +29,17 @@ class Game
   end
 
   def col_won?(col_index, player)
-    true
+    counter = 0
+    row_index = 0
+    while row_index < 6
+      counter += 1 if board.board[row_index][col_index] == player.marker
+      counter = 0 unless board.board[row_index][col_index] == player.marker
+
+      return true if counter == 4
+
+      row_index += 1
+    end
+
+    false
   end
 end
