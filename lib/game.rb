@@ -44,6 +44,22 @@ class Game
   end
 
   def diagonal_won?(row_index, col_index, player)
-    true
+    until row_index == 0 || col_index == 0
+      row_index -= 1
+      col_index -= 1
+    end
+
+    counter = 0
+    until row_index == 5 || col_index == 6
+      counter += 1 if board.board[row_index][col_index] == player.marker
+      counter = 0 unless board.board[row_index][col_index] == player.marker 
+
+      row_index += 1
+      col_index += 1
+
+      return true if counter == 4
+    end
+
+    false
   end
 end

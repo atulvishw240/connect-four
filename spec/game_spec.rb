@@ -84,5 +84,14 @@ describe do
 
       expect(@game.diagonal_won?(3, 3, @player1)).to eq(true)
     end
+
+    it "returns false if there are'nt 4 consecutive same marker in a diagonal" do
+      @board.board[0][0] = @player1.marker
+      @board.board[2][2] = @player1.marker
+      @board.board[3][3] = @player1.marker
+      @board.board[4][4] = @player1.marker
+
+      expect(@game.diagonal_won?(4, 4, @player1)).to eq(false)
+    end
   end
 end
