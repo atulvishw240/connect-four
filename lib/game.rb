@@ -67,6 +67,25 @@ class Game
   end
 
   def rev_diagonal_won?(row_index, col_index, player)
-    true
+    until row_index == 0 || col_index == 6
+      row_index -= 1
+      col_index += 1
+    end
+
+    counter = 0
+    until row_index == 6 || col_index == -1
+      if board.board[row_index][col_index] == player.marker
+        counter += 1
+      else
+        counter = 0
+      end
+
+      row_index += 1
+      col_index -= 1
+
+      return true if counter == 4
+    end
+
+    false
   end
 end
