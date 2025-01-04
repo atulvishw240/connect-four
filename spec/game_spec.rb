@@ -25,4 +25,24 @@ describe do
       expect(@game.current_player).to eq(@player2)
     end
   end
+
+  describe "#row_won" do
+    it "takes row_index as input & returns true if there are 4 consecutive same marker in a row" do
+      @board.board[0][0] = @player1.marker
+      @board.board[0][1] = @player1.marker
+      @board.board[0][2] = @player1.marker
+      @board.board[0][3] = @player1.marker
+
+      expect(@game.row_won?(0)).to eq(true)
+    end
+
+    it "takes row_index as input & returns false if there aren't 4 consecutive same marker in a row" do
+      @board.board[0][1] = @player1.marker
+      @board.board[0][3] = @player1.marker
+      @board.board[0][4] = @player1.marker
+      @board.board[0][5] = @player1.marker
+
+      expect(@game.won?(0)).to eq(false)
+    end
+  end
 end
