@@ -88,4 +88,13 @@ class Game
 
     false
   end
+
+  def won?(row_index, col_index, player)
+    bool1 = row_won?(row_index, player)
+    bool2 = col_won?(col_index, player)
+    bool3 = diagonal_won?(row_index, col_index, player)
+    bool4 = rev_diagonal_won?(row_index, col_index, player)
+
+    bool1 || bool2 || bool3 || bool4
+  end
 end
