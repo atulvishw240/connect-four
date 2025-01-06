@@ -8,7 +8,14 @@ class Player
   end
 
   def select_move
-    print "Enter your move between (1..7): "
-    gets.chomp.to_i
+    loop do
+      print "Enter your move between (1..7): "
+      move = gets.chomp.to_i
+
+      return move if move.between?(1, 7)
+
+      puts "Erroneous input, Try again..."
+      puts "\n"
+    end
   end
 end

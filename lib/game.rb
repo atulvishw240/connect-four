@@ -6,6 +6,7 @@ class Game
     @board = board
     @players = [player1, player2]
     @current_player_id = 0
+    puts "#{current_player.name} goes first!!"
   end
 
   def current_player
