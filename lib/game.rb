@@ -27,24 +27,18 @@ class Game
   def play
     board.display
     counter = 0
-    while counter <= 21
+    while counter <= 41
       move = current_player.select_move
-      board.board[move[0]][move[1]] = current_player.marker
+      row_index = move[0]
+      col_index = move[1]
+      board.board[row_index][col_index] = current_player.marker
       board.display
-      if won?(move[0], move[1], current_player)
+
+      if board.won?(row_index, col_index, current_player)
         puts winning_message(current_player)
         return
       end
-      switch_player!
 
-      move = current_player.select_move
-      board.board[move[0]][move[1]] = current_player.marker
-      board.display
-
-      if won?(move[0], move[1], current_player)
-        puts winning_message(current_player)
-        return
-      end
       switch_player!
     end
 
