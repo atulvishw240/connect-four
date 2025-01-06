@@ -29,6 +29,8 @@ class Game
     counter = 0
     while counter <= 41
       move = current_player.select_move
+      row_index = board.row_index(move)
+      col_index = move - 1
       board.update(move, current_player)
       board.display
 

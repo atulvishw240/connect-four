@@ -25,8 +25,20 @@ class Board
   end
 
   def update(move, player)
-    row = avail_row(move)
+    row = row_index(move)
     board[row][move - 1] = player.marker
+  end
+
+  def row_index(move)
+    i = 0
+    counter = 0
+    while i < 6
+      counter += 1 if board[counter][move - 1] == "\u{26AB}"
+
+      i += 1
+    end
+
+    counter - 1
   end
 
   def won?(row_index, col_index, player)
@@ -112,17 +124,5 @@ class Board
     end
 
     false
-  end
-
-  def row_index(move)
-    i = 0
-    counter = 0
-    while i < 6
-      counter += 1 if board[counter][move - 1] == "\u{26AB}"
-
-      i += 1
-    end
-
-    counter - 1
   end
 end
