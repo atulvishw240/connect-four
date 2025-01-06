@@ -21,3 +21,5 @@ I had to google a lot about, "Ok I know what behavior I want but How will I test
 3. I learned that TDD is a discipline, its quite hard to write just enough code to pass the tests.
 
 
+https://github.com/user-attachments/assets/86b1324f-996d-4413-a3f3-452f6e5a8e09
+
