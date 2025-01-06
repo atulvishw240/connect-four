@@ -7,6 +7,7 @@ class Board
   end
 
   def display
+    puts "  1    2    3    4    5    6    7"
     puts "------------------------------------\n"
 
     board.each do |row|
