@@ -17,7 +17,7 @@ class Board
   def display_row(row)
     print "|"
     row.each do |marker|
-      print " \u{26AB} |"
+      print " #{marker} |"
     end
 
     puts "\n------------------------------------\n"

@@ -20,7 +20,7 @@ describe do
 
   describe "#switch_player" do
     it "returns @player2 as current player" do
-      @game.switch_player
+      @game.switch_player!
 
       expect(@game.current_player).to eq(@player2)
     end
