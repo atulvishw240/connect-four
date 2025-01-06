@@ -29,9 +29,7 @@ class Game
     counter = 0
     while counter <= 41
       move = current_player.select_move
-      row_index = move[0]
-      col_index = move[1]
-      board.board[row_index][col_index] = current_player.marker
+      board.update(move, current_player)
       board.display
 
       if board.won?(row_index, col_index, current_player)

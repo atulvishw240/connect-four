@@ -129,8 +129,17 @@ describe Board do
   describe "#update" do
     it "updates board with player's move" do
       allow(@player1).to receive(:select_move) { 1 }
+      @board.update(1, @player1)
 
-      expect(@board.update(1, @player1)).to eq(@player1.marker)
+      expect(@board.board[5][0]).to eq(@player1.marker)
+    end
+
+    it "updates board with player's move in the same column" do
+      @board.board[5][0] = @player1.marker
+      allow(@player1).to receive(:select_move) { 1 }
+      @board.update(1, @player1)
+
+      expect(@board.board[4][0]).to eq(@player1.marker)
     end
   end
 end
