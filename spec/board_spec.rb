@@ -130,7 +130,7 @@ describe Board do
     it "updates board with player's move" do
       allow(@player1).to receive(:select_move) { 1 }
 
-      expect(@board.board[5][0]).to eq(@player1.marker)
+      expect(@board.update(1, @player1)).to eq(@player1.marker)
     end
   end
 end

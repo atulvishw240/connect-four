@@ -24,6 +24,10 @@ class Board
     puts "\n------------------------------------\n"
   end
 
+  def update(move, player)
+    board[5][move - 1] = player.marker
+  end
+
   def won?(row_index, col_index, player)
     bool1 = row_won?(row_index, player)
     bool2 = col_won?(col_index, player)
